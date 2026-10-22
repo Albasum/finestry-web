@@ -6,7 +6,7 @@
 <meta name="description" content="Finestry arranges your Mac windows into exact layouts and saves them as scenes. Made by an independent developer.">
 <meta property="og:title" content="Finestry">
 <meta property="og:description" content="Perfect layouts. First try. Window tiling for macOS 14+.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='4' width='15' height='24' rx='3' fill='%23177f7a'/%3E%3Crect x='19' y='4' width='11' height='11' rx='3' fill='%23131918'/%3E%3Crect x='19' y='17' width='11' height='11' rx='3' fill='%23131918'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222.4%22%20fill%3D%22%23f5a032%22/%3E%3Crect%20x%3D%2228%22%20y%3D%2263%22%20width%3D%2220%22%20height%3D%2218%22%20rx%3D%225%22%20fill%3D%22%2316171c%22/%3E%3Crect%20x%3D%2220%22%20y%3D%2241%22%20width%3D%2244%22%20height%3D%2219%22%20rx%3D%225%22%20fill%3D%22%2316171c%22/%3E%3Crect%20x%3D%2234%22%20y%3D%2218%22%20width%3D%2248%22%20height%3D%2220%22%20rx%3D%225%22%20fill%3D%22%2316171c%22/%3E%3Ccircle%20cx%3D%2241%22%20cy%3D%2224.5%22%20r%3D%222.6%22%20fill%3D%22%23ff5f57%22/%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%2224.5%22%20r%3D%222.6%22%20fill%3D%22%23febc2e%22/%3E%3Ccircle%20cx%3D%2255%22%20cy%3D%2224.5%22%20r%3D%222.6%22%20fill%3D%22%2328c840%22/%3E%3C/svg%3E">
 <style>:root{color-scheme:light}html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}*,*::before,*::after{box-sizing:border-box}</style>
 <title>Finestry</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .lp-nav.scrolled{border-bottom-color:var(--line)}
 .lp-nav .lp-in{height:60px;display:flex;align-items:center;gap:28px}
 .lp-logo{display:flex;align-items:center;gap:10px;font:700 18px var(--display);letter-spacing:-.01em;text-decoration:none}
+.lp-logomark{width:28px;height:28px;color:var(--fg);flex:none}
 .lp-mark{width:22px;height:17px;display:grid;grid-template-columns:7fr 5fr;grid-template-rows:1fr 1fr;gap:2px}
 .lp-mark i{background:var(--fg);border-radius:2px}.lp-mark i:first-child{grid-row:span 2;background:var(--accent)}
 .lp-links{display:flex;gap:24px;margin-left:auto;font-size:15px}
@@ -329,7 +330,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
 <body>
 <nav class="lp-nav" id="nav">
   <div class="lp-in">
-    <a class="lp-logo" href="#top"><span class="lp-mark"><i></i><i></i><i></i></span>Finestry</a>
+    <a class="lp-logo" href="#top"><svg class="lp-logomark" viewBox="14 12 74 74" aria-hidden="true"><rect x="28" y="63" width="20" height="18" rx="5" fill="currentColor"/><rect x="20" y="41" width="44" height="19" rx="5" fill="currentColor"/><rect x="34" y="18" width="48" height="20" rx="5" fill="currentColor"/><circle cx="40.5" cy="24" r="2.1" fill="#ff5f57"/><circle cx="46.8" cy="24" r="2.1" fill="#febc2e"/><circle cx="53.1" cy="24" r="2.1" fill="#28c840"/></svg>Finestry</a>
     <div class="lp-links">
       <a href="#features" data-i="nav.features">Features</a>
       <a href="#how" data-i="nav.how">How it works</a>
