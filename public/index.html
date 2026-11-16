@@ -219,11 +219,52 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
 .clip .ico.i4{background:linear-gradient(160deg,oklch(0.86 0.13 95),oklch(0.74 0.14 85));color:#4a3b10}
 .clip .veil{position:absolute;inset:0;background:rgba(8,14,13,.42);opacity:0;transition:opacity .25s ease;z-index:20}
 .clip .veil.on{opacity:1}
-.clip .hud{position:absolute;left:220px;top:125px;width:1000px;height:650px;border-radius:20px;z-index:21;color:var(--hud-fg);
-  background:rgba(238,238,240,.82);backdrop-filter:blur(30px) saturate(1.5);-webkit-backdrop-filter:blur(30px) saturate(1.5);
+.clip .hud{position:absolute;left:230px;top:55px;width:980px;height:790px;border-radius:22px;z-index:21;color:#1d1f21;
+  background:rgba(243,243,245,.94);backdrop-filter:blur(30px) saturate(1.5);-webkit-backdrop-filter:blur(30px) saturate(1.5);
   box-shadow:0 40px 90px -25px rgba(0,0,0,.6),inset 0 0 0 .5px rgba(255,255,255,.7),0 0 0 .5px rgba(0,0,0,.15);
   opacity:0;transform:scale(.95);transition:opacity .25s ease,transform .25s cubic-bezier(.2,.9,.3,1.15)}
 .clip .hud.on{opacity:1;transform:scale(1)}
+.clip .hud>*{position:absolute}
+.clip .hv-title{left:36px;top:24px;font:700 30px/1.2 var(--sys);letter-spacing:-.01em}
+.clip .hv-title span{color:#45484c}
+.clip .hv-mon{top:82px;width:250px;height:150px;box-sizing:border-box;border-radius:16px;background:#e9e9ec;box-shadow:inset 0 0 0 1.5px #d6d6da;padding:12px 16px}
+.clip .hv-mon.sel{background:#f6ebe0;box-shadow:inset 0 0 0 3px #e9862a}
+.clip .hv-mon .k{font:500 13px var(--sys);color:#6b6f73}
+.clip .hv-mon .mm{position:relative;height:72px;margin-top:6px}
+.clip .hv-mon .mm i{position:absolute;border-radius:3px;transition:all .45s cubic-bezier(.3,.8,.3,1)}
+.clip .hv-mon .nm{text-align:center;font:600 18px var(--sys);margin-top:8px}
+.clip .hv-mon:not(.sel) .nm{font-weight:500;color:#45484c}
+.clip .hv-stand{top:240px;width:80px;height:7px;border-radius:4px;background:#cfcfd3}
+.clip .hv-lbl{top:262px;font:600 15px var(--sys);letter-spacing:.09em;color:#2b2e31;display:flex;justify-content:space-between}
+.clip .hv-lbl span{font-weight:400;letter-spacing:0;color:#6b6f73;margin-left:6px}
+.clip .hv-board{left:36px;top:296px;width:600px;height:320px;border-radius:18px;background:#e2e2e6;box-shadow:inset 0 0 0 1.5px #d4d4d8}
+.clip .hv-tile{position:absolute;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:0 14px;box-sizing:border-box;text-align:center;
+  transition:left .45s cubic-bezier(.3,.8,.3,1),top .45s cubic-bezier(.3,.8,.3,1),width .45s cubic-bezier(.3,.8,.3,1),height .45s cubic-bezier(.3,.8,.3,1),transform .18s ease,box-shadow .18s ease}
+.clip .hv-tile .ico{width:44px;height:44px;font-size:14px}
+.clip .hv-tile .tt{font:600 15px/1.25 var(--sys);color:#1d1f21;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.clip .hv-tile .n{position:absolute;left:12px;top:12px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font:600 11.5px var(--sys);color:#fff}
+.clip .hv-tile .x{position:absolute;right:10px;top:10px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.7);display:grid;place-items:center;font-size:15px;color:#3a3d40}
+.clip .hv-tile.lift{transform:scale(1.04);box-shadow:0 24px 40px -14px rgba(0,0,0,.45);z-index:3;transition:left .9s cubic-bezier(.45,.05,.25,1),top .9s cubic-bezier(.45,.05,.25,1),width .9s cubic-bezier(.45,.05,.25,1),height .9s cubic-bezier(.45,.05,.25,1),transform .18s ease,box-shadow .18s ease}
+.clip .hv-tile.drop{box-shadow:inset 0 0 0 3px #e9862a}
+.clip .hv-albl{left:664px;width:280px}
+.clip .hv-blbl{left:36px}
+.clip .hv-thumbs{left:664px;top:296px;width:280px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.clip .hv-th{position:relative;height:66px;border-radius:12px;background:#e6e6ea;box-shadow:inset 0 0 0 1.5px #d4d4d8;transition:box-shadow .2s,background .2s}
+.clip .hv-th.sel{background:#f6ebe0;box-shadow:inset 0 0 0 3px #e9862a}
+.clip .hv-th i{position:absolute;border-radius:3px}
+.clip .hv-sep{left:36px;right:36px;height:1px;background:rgba(0,0,0,.1)}
+.clip .hv-add{left:36px;top:656px;font:600 15px var(--sys);letter-spacing:.09em;color:#2b2e31}
+.clip .hv-empty{left:36px;top:690px;font:400 16px var(--sys);color:#45484c}
+.clip .hv-foot{left:36px;top:740px;display:flex;align-items:center;gap:16px;font:400 15px var(--sys);color:#45484c}
+.clip .hv-foot span{display:flex;align-items:center;gap:8px}
+.clip .hv-foot kbd,.clip .hv-up kbd{font:500 13px var(--sys);color:#1d1f21;min-width:36px;height:28px;padding:0 8px;box-sizing:border-box;display:grid;place-items:center;border-radius:7px;background:#fff;box-shadow:inset 0 0 0 1px #d4d4d8}
+.clip .hv-btns{right:36px;top:732px;display:flex;gap:10px}
+.clip .hv-btns>*{position:static!important}
+.clip .hv-up{height:44px;padding:0 10px 0 20px;border-radius:11px;display:flex;align-items:center;gap:18px;font:600 17px var(--sys);color:#e07a1c;background:#fbeee2;box-shadow:inset 0 0 0 1px #f2cfae;transition:transform .15s}
+.clip .hv-up kbd{background:#f6dcc4;box-shadow:none;color:#e07a1c}
+.clip .hv-up.press{transform:scale(.96)}
+.clip .hv-new{height:44px;padding:0 18px;border-radius:11px;display:flex;align-items:center;font:500 17px var(--sys);color:#2b2e31;background:#e6e6ea;box-shadow:inset 0 0 0 1px #d0d0d4}
+
 .clip .hud>.a{position:absolute;left:36px;right:36px}
 .clip .mon{top:30px;display:flex;align-items:center;gap:8px;font-size:15px;color:var(--hud-muted)}
 .clip .mon svg{width:18px;height:16px}
@@ -427,7 +468,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Notes</span></div>
         <div class="body"><div class="nt">
           <h4>Beta checklist</h4>
-          <div class="row"><span class="cb on"></span>Scenes per monitor</div>
+          <div class="row"><span class="cb on"></span>Layouts per monitor</div>
           <div class="row"><span class="cb on"></span>Crash reports</div>
           <div class="row"><span class="cb"></span>Landing page video</div>
         </div></div>
@@ -441,19 +482,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <div class="gap" data-id="g3" style="left:1116px;top:598px">12 px</div>
 
       <div class="veil" data-id="veil"></div>
-      <div class="hud" data-id="hud">
-        <div class="a mon"><svg viewBox="0 0 18 16" aria-hidden="true"><rect x="1" y="1" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="currentColor" stroke-width="1.4"/></svg>Main display</div>
-        <div class="a scene">Scene: Development</div>
-        <div class="a summary"><b data-id="sumL"></b><span data-id="sumO"></span></div>
-        <div class="a h2 wts">Windows to stack</div>
-        <div class="a wtsub">Add, remove, or drag to reorder</div>
-        <div class="a count" style="right:36px">4 windows</div>
-        <div class="a cardrow" data-id="cardrow"></div>
-        <div class="a divider"></div>
-        <div class="a h2 sl">Select layout</div>
-        <div class="a kh" style="right:36px"><kbd>←</kbd><kbd>→</kbd>navigate<span class="sp"></span><kbd>↵</kbd>apply</div>
-        <div class="a thumbs" data-id="thumbs"></div>
-      </div>
+      <div class="hud" data-id="hud"></div>
 
       <div class="keys" data-id="keys"></div>
       <div class="ring" data-id="ring"></div>
@@ -568,7 +597,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Notes</span></div>
         <div class="body"><div class="nt">
           <h4>Beta checklist</h4>
-          <div class="row"><span class="cb on"></span>Scenes per monitor</div>
+          <div class="row"><span class="cb on"></span>Layouts per monitor</div>
           <div class="row"><span class="cb on"></span>Crash reports</div>
           <div class="row"><span class="cb"></span>Landing page video</div>
         </div></div>
@@ -582,19 +611,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <div class="gap" data-id="g3" style="left:1116px;top:598px">12 px</div>
 
       <div class="veil" data-id="veil"></div>
-      <div class="hud" data-id="hud">
-        <div class="a mon"><svg viewBox="0 0 18 16" aria-hidden="true"><rect x="1" y="1" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="currentColor" stroke-width="1.4"/></svg>Main display</div>
-        <div class="a scene">Scene: Development</div>
-        <div class="a summary"><b data-id="sumL"></b><span data-id="sumO"></span></div>
-        <div class="a h2 wts">Windows to stack</div>
-        <div class="a wtsub">Add, remove, or drag to reorder</div>
-        <div class="a count" style="right:36px">4 windows</div>
-        <div class="a cardrow" data-id="cardrow"></div>
-        <div class="a divider"></div>
-        <div class="a h2 sl">Select layout</div>
-        <div class="a kh" style="right:36px"><kbd>←</kbd><kbd>→</kbd>navigate<span class="sp"></span><kbd>↵</kbd>apply</div>
-        <div class="a thumbs" data-id="thumbs"></div>
-      </div>
+      <div class="hud" data-id="hud"></div>
 
       <div class="keys" data-id="keys"></div>
       <div class="ring" data-id="ring"></div>
@@ -695,7 +712,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Notes</span></div>
         <div class="body"><div class="nt">
           <h4>Beta checklist</h4>
-          <div class="row"><span class="cb on"></span>Scenes per monitor</div>
+          <div class="row"><span class="cb on"></span>Layouts per monitor</div>
           <div class="row"><span class="cb on"></span>Crash reports</div>
           <div class="row"><span class="cb"></span>Landing page video</div>
         </div></div>
@@ -709,19 +726,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <div class="gap" data-id="g3" style="left:1116px;top:598px">12 px</div>
 
       <div class="veil" data-id="veil"></div>
-      <div class="hud" data-id="hud">
-        <div class="a mon"><svg viewBox="0 0 18 16" aria-hidden="true"><rect x="1" y="1" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="currentColor" stroke-width="1.4"/></svg>Main display</div>
-        <div class="a scene">Scene: Development</div>
-        <div class="a summary"><b data-id="sumL"></b><span data-id="sumO"></span></div>
-        <div class="a h2 wts">Windows to stack</div>
-        <div class="a wtsub">Add, remove, or drag to reorder</div>
-        <div class="a count" style="right:36px">4 windows</div>
-        <div class="a cardrow" data-id="cardrow"></div>
-        <div class="a divider"></div>
-        <div class="a h2 sl">Select layout</div>
-        <div class="a kh" style="right:36px"><kbd>←</kbd><kbd>→</kbd>navigate<span class="sp"></span><kbd>↵</kbd>apply</div>
-        <div class="a thumbs" data-id="thumbs"></div>
-      </div>
+      <div class="hud" data-id="hud"></div>
 
       <div class="keys" data-id="keys"></div>
       <div class="ring" data-id="ring"></div>
@@ -765,7 +770,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
     </div>
   </div>
 </div></div>
-          <div class="lp-ftext lp-rv"><h3 class="lp-h3" data-i="f2.t">Drag to reorder</h3><p class="lp-p" data-i="f2.p">Open the HUD and drag any window card, the master included, to a new slot. Every window moves to its new place in one go.</p><kbd class="lp-k">⌥A</kbd></div></div>
+          <div class="lp-ftext lp-rv"><h3 class="lp-h3" data-i="f2.t">Drag to reorder</h3><p class="lp-p" data-i="f2.p">Open the HUD and drag one window onto another to swap them. Press Return and every window moves to its new place in one go.</p><kbd class="lp-k">⌥A</kbd></div></div>
         <div class="lp-feat"><div class="lp-clipbox"><div class="clip" data-clip="3">
   <div class="clipwrap" data-id="wrap">
     <div class="stage" data-id="stage">
@@ -822,7 +827,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Notes</span></div>
         <div class="body"><div class="nt">
           <h4>Beta checklist</h4>
-          <div class="row"><span class="cb on"></span>Scenes per monitor</div>
+          <div class="row"><span class="cb on"></span>Layouts per monitor</div>
           <div class="row"><span class="cb on"></span>Crash reports</div>
           <div class="row"><span class="cb"></span>Landing page video</div>
         </div></div>
@@ -836,19 +841,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <div class="gap" data-id="g3" style="left:1116px;top:598px">12 px</div>
 
       <div class="veil" data-id="veil"></div>
-      <div class="hud" data-id="hud">
-        <div class="a mon"><svg viewBox="0 0 18 16" aria-hidden="true"><rect x="1" y="1" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="currentColor" stroke-width="1.4"/></svg>Main display</div>
-        <div class="a scene">Scene: Development</div>
-        <div class="a summary"><b data-id="sumL"></b><span data-id="sumO"></span></div>
-        <div class="a h2 wts">Windows to stack</div>
-        <div class="a wtsub">Add, remove, or drag to reorder</div>
-        <div class="a count" style="right:36px">4 windows</div>
-        <div class="a cardrow" data-id="cardrow"></div>
-        <div class="a divider"></div>
-        <div class="a h2 sl">Select layout</div>
-        <div class="a kh" style="right:36px"><kbd>←</kbd><kbd>→</kbd>navigate<span class="sp"></span><kbd>↵</kbd>apply</div>
-        <div class="a thumbs" data-id="thumbs"></div>
-      </div>
+      <div class="hud" data-id="hud"></div>
 
       <div class="keys" data-id="keys"></div>
       <div class="ring" data-id="ring"></div>
@@ -949,7 +942,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Notes</span></div>
         <div class="body"><div class="nt">
           <h4>Beta checklist</h4>
-          <div class="row"><span class="cb on"></span>Scenes per monitor</div>
+          <div class="row"><span class="cb on"></span>Layouts per monitor</div>
           <div class="row"><span class="cb on"></span>Crash reports</div>
           <div class="row"><span class="cb"></span>Landing page video</div>
         </div></div>
@@ -963,19 +956,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <div class="gap" data-id="g3" style="left:1116px;top:598px">12 px</div>
 
       <div class="veil" data-id="veil"></div>
-      <div class="hud" data-id="hud">
-        <div class="a mon"><svg viewBox="0 0 18 16" aria-hidden="true"><rect x="1" y="1" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="currentColor" stroke-width="1.4"/></svg>Main display</div>
-        <div class="a scene">Scene: Development</div>
-        <div class="a summary"><b data-id="sumL"></b><span data-id="sumO"></span></div>
-        <div class="a h2 wts">Windows to stack</div>
-        <div class="a wtsub">Add, remove, or drag to reorder</div>
-        <div class="a count" style="right:36px">4 windows</div>
-        <div class="a cardrow" data-id="cardrow"></div>
-        <div class="a divider"></div>
-        <div class="a h2 sl">Select layout</div>
-        <div class="a kh" style="right:36px"><kbd>←</kbd><kbd>→</kbd>navigate<span class="sp"></span><kbd>↵</kbd>apply</div>
-        <div class="a thumbs" data-id="thumbs"></div>
-      </div>
+      <div class="hud" data-id="hud"></div>
 
       <div class="keys" data-id="keys"></div>
       <div class="ring" data-id="ring"></div>
@@ -1076,7 +1057,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Notes</span></div>
         <div class="body"><div class="nt">
           <h4>Beta checklist</h4>
-          <div class="row"><span class="cb on"></span>Scenes per monitor</div>
+          <div class="row"><span class="cb on"></span>Layouts per monitor</div>
           <div class="row"><span class="cb on"></span>Crash reports</div>
           <div class="row"><span class="cb"></span>Landing page video</div>
         </div></div>
@@ -1090,19 +1071,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <div class="gap" data-id="g3" style="left:1116px;top:598px">12 px</div>
 
       <div class="veil" data-id="veil"></div>
-      <div class="hud" data-id="hud">
-        <div class="a mon"><svg viewBox="0 0 18 16" aria-hidden="true"><rect x="1" y="1" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="currentColor" stroke-width="1.4"/></svg>Main display</div>
-        <div class="a scene">Scene: Development</div>
-        <div class="a summary"><b data-id="sumL"></b><span data-id="sumO"></span></div>
-        <div class="a h2 wts">Windows to stack</div>
-        <div class="a wtsub">Add, remove, or drag to reorder</div>
-        <div class="a count" style="right:36px">4 windows</div>
-        <div class="a cardrow" data-id="cardrow"></div>
-        <div class="a divider"></div>
-        <div class="a h2 sl">Select layout</div>
-        <div class="a kh" style="right:36px"><kbd>←</kbd><kbd>→</kbd>navigate<span class="sp"></span><kbd>↵</kbd>apply</div>
-        <div class="a thumbs" data-id="thumbs"></div>
-      </div>
+      <div class="hud" data-id="hud"></div>
 
       <div class="keys" data-id="keys"></div>
       <div class="ring" data-id="ring"></div>
@@ -1203,7 +1172,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Notes</span></div>
         <div class="body"><div class="nt">
           <h4>Beta checklist</h4>
-          <div class="row"><span class="cb on"></span>Scenes per monitor</div>
+          <div class="row"><span class="cb on"></span>Layouts per monitor</div>
           <div class="row"><span class="cb on"></span>Crash reports</div>
           <div class="row"><span class="cb"></span>Landing page video</div>
         </div></div>
@@ -1217,19 +1186,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <div class="gap" data-id="g3" style="left:1116px;top:598px">12 px</div>
 
       <div class="veil" data-id="veil"></div>
-      <div class="hud" data-id="hud">
-        <div class="a mon"><svg viewBox="0 0 18 16" aria-hidden="true"><rect x="1" y="1" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="currentColor" stroke-width="1.4"/></svg>Main display</div>
-        <div class="a scene">Scene: Development</div>
-        <div class="a summary"><b data-id="sumL"></b><span data-id="sumO"></span></div>
-        <div class="a h2 wts">Windows to stack</div>
-        <div class="a wtsub">Add, remove, or drag to reorder</div>
-        <div class="a count" style="right:36px">4 windows</div>
-        <div class="a cardrow" data-id="cardrow"></div>
-        <div class="a divider"></div>
-        <div class="a h2 sl">Select layout</div>
-        <div class="a kh" style="right:36px"><kbd>←</kbd><kbd>→</kbd>navigate<span class="sp"></span><kbd>↵</kbd>apply</div>
-        <div class="a thumbs" data-id="thumbs"></div>
-      </div>
+      <div class="hud" data-id="hud"></div>
 
       <div class="keys" data-id="keys"></div>
       <div class="ring" data-id="ring"></div>
@@ -1330,7 +1287,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         <div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Notes</span></div>
         <div class="body"><div class="nt">
           <h4>Beta checklist</h4>
-          <div class="row"><span class="cb on"></span>Scenes per monitor</div>
+          <div class="row"><span class="cb on"></span>Layouts per monitor</div>
           <div class="row"><span class="cb on"></span>Crash reports</div>
           <div class="row"><span class="cb"></span>Landing page video</div>
         </div></div>
@@ -1344,19 +1301,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <div class="gap" data-id="g3" style="left:1116px;top:598px">12 px</div>
 
       <div class="veil" data-id="veil"></div>
-      <div class="hud" data-id="hud">
-        <div class="a mon"><svg viewBox="0 0 18 16" aria-hidden="true"><rect x="1" y="1" width="16" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 15h6M9 12v3" stroke="currentColor" stroke-width="1.4"/></svg>Main display</div>
-        <div class="a scene">Scene: Development</div>
-        <div class="a summary"><b data-id="sumL"></b><span data-id="sumO"></span></div>
-        <div class="a h2 wts">Windows to stack</div>
-        <div class="a wtsub">Add, remove, or drag to reorder</div>
-        <div class="a count" style="right:36px">4 windows</div>
-        <div class="a cardrow" data-id="cardrow"></div>
-        <div class="a divider"></div>
-        <div class="a h2 sl">Select layout</div>
-        <div class="a kh" style="right:36px"><kbd>←</kbd><kbd>→</kbd>navigate<span class="sp"></span><kbd>↵</kbd>apply</div>
-        <div class="a thumbs" data-id="thumbs"></div>
-      </div>
+      <div class="hud" data-id="hud"></div>
 
       <div class="keys" data-id="keys"></div>
       <div class="ring" data-id="ring"></div>
@@ -1532,6 +1477,7 @@ function mountClip(root,CLIP){
     w2:{n:'Terminal',g:'&gt;_',t:'finestry — zsh — 171×66'},
     w3:{n:'Browser',g:'◎',t:'Finestry — finestry.app'},
     w4:{n:'Notes',g:'≡',t:'Beta checklist'}};
+  const ORDER0=['w1','w2','w3','w4'];
   const ico=(k,cls)=>'<span class="ico i'+k[1]+(cls?' '+cls:'')+'">'+APP[k].g+'</span>';
   const tint=k=>'color-mix(in oklch, var(--'+k+') 22%, white)';
   const LAYOUTS=[['cols','Columns'],['ms','Master + stack'],['grid','Grid 2×2'],['mr','Master right']];
@@ -1543,79 +1489,92 @@ function mountClip(root,CLIP){
   const tileOrder=(o,stagger)=>['M','S1','S2','S3'].forEach((s,i)=>setTimeout(()=>setRect(o[i],SLOT[s]),stagger?i*60:0));
   const messy=()=>{for(const k in MESSY){setRect(k,MESSY[k]);$(k).style.zIndex={w1:4,w2:3,w3:2,w4:1}[k]}};
 
-  // cards (one per window, positioned by slot)
-  const row=$('cardrow');
-  row.innerHTML=['w1','w2','w3','w4'].map(k=>'<div class="card" data-id="c'+k+'" style="background:'+tint(k)+'"><span class="x">×</span><div class="top">'+ico(k)+
-    '<div><div class="nm">'+APP[k].n+'</div><div class="wn"></div></div><div class="hd"><i></i><i></i><i></i></div></div><div class="ti">'+APP[k].t+'</div></div>').join('');
-  const cardTo=(k,i)=>$('c'+k).style.left=(i*236)+'px';
-  function setCards(o){o.forEach((k,i)=>{cardTo(k,i)})}
-  function number(o){o.forEach((k,i)=>$('c'+k).querySelector('.wn').textContent='Window '+(i+1))}
-
-  function render(o,sel){
-    $('thumbs').innerHTML=LAYOUTS.map(([id,n])=>'<div class="thumb L-'+id+(id===sel?' sel':'')+'"><div class="mini">'+
-      o.map(k=>'<i style="background:color-mix(in oklch, var(--'+k+') 45%, white)">'+ico(k)+'</i>').join('')+
-      '</div><div class="tl"><span class="chk">✓</span>'+n+'</div></div>').join('');
-    $('sumL').textContent=LAYOUTS.find(l=>l[0]===sel)[1];
-    $('sumO').textContent=sel==='ms'?APP[o[0]].n+' (master) · '+o.slice(1).map(k=>APP[k].n).join(' · ')
-      :o.map(k=>APP[k].n).join(' · ')+'  (left to right)';
+  // ---- HUD v5 (layout title, monitor cards, board, arrangement gallery, footer) ----
+  const SHADE={w1:'oklch(0.83 0.06 250)',w2:'oklch(0.85 0.05 185)',w3:'oklch(0.89 0.07 75)',w4:'oklch(0.91 0.08 100)'};
+  const BADGE={w1:'oklch(0.55 0.14 255)',w2:'oklch(0.55 0.09 185)',w3:'oklch(0.66 0.14 60)',w4:'oklch(0.70 0.13 90)'};
+  const ARR={
+    ms:[[0,0,.55,1],[.55,0,.45,1/3],[.55,1/3,.45,1/3],[.55,2/3,.45,1/3]],
+    cols:[[0,0,.25,1],[.25,0,.25,1],[.5,0,.25,1],[.75,0,.25,1]],
+    mr:[[.45,0,.55,1],[0,0,.45,1/3],[0,1/3,.45,1/3],[0,2/3,.45,1/3]],
+    grid:[[0,0,.5,.5],[.5,0,.5,.5],[0,.5,.5,.5],[.5,.5,.5,.5]],
+    mt:[[0,0,1,.55],[0,.55,1/3,.45],[1/3,.55,1/3,.45],[2/3,.55,1/3,.45]],
+    rows:[[0,0,1,.25],[0,.25,1,.25],[0,.5,1,.25],[0,.75,1,.25]]};
+  const ARRK=['ms','cols','mr','grid','mt','rows'];
+  const fr=(f,W,H,pad,gap)=>{const iw=W-2*pad+gap,ih=H-2*pad+gap;return[pad+f[0]*iw,pad+f[1]*ih,f[2]*iw-gap,f[3]*ih-gap]};
+  const px=r=>'left:'+r[0]+'px;top:'+r[1]+'px;width:'+r[2]+'px;height:'+r[3]+'px';
+  $('hud').innerHTML='<div class="hv-title"><span>Layout:</span> Development</div>'+
+    '<div class="hv-mon sel" style="left:36px"><div class="k">⌘1</div><div class="mm" data-id="mm"></div><div class="nm">Main</div></div><i class="hv-stand" style="left:121px"></i>'+
+    '<div class="hv-mon" style="left:302px"><div class="k">⌘2</div><div class="mm"><i style="left:0;top:0;width:218px;height:72px;background:#dcdce0"></i></div><div class="nm">Secondary</div></div><i class="hv-stand" style="left:387px"></i>'+
+    '<div class="hv-lbl hv-blbl">BOARD<span>(4)</span></div><div class="hv-board" data-id="board"></div>'+
+    '<div class="hv-lbl hv-albl"><b style="font-weight:600">ARRANGEMENT</b><span data-id="arrN"></span></div><div class="hv-thumbs" data-id="thumbs"></div>'+
+    '<div class="hv-sep" style="top:636px"></div><div class="hv-add">ADD TO BOARD</div><div class="hv-empty">No other windows to tile</div>'+
+    '<div class="hv-sep" style="top:722px"></div>'+
+    '<div class="hv-foot"><span><kbd>↩</kbd>Apply</span><span><kbd>←↑↓→</kbd>Choose</span><span><kbd>⌃⇥</kbd>Monitor</span><span><kbd>esc</kbd>Close</span></div>'+
+    '<div class="hv-btns"><div class="hv-up" data-id="upd">Update «Development»<kbd>⌘S</kbd></div><div class="hv-new">Save as new…</div></div>';
+  $('thumbs').innerHTML=ARRK.map(a=>'<div class="hv-th" data-id="th-'+a+'">'+ARR[a].map((f,i)=>'<i style="'+px(fr(f,88,66,9,4))+';background:'+SHADE[ORDER0[i]]+'"></i>').join('')+'</div>').join('');
+  $('board').innerHTML=ORDER0.map((k,i)=>'<div class="hv-tile" data-id="t'+k+'" style="background:'+SHADE[k]+'"><span class="n" style="background:'+BADGE[k]+'"></span><span class="x">×</span>'+ico(k)+'<div class="tt">'+APP[k].t+'</div></div>').join('');
+  $('mm').innerHTML=ORDER0.map(k=>'<i data-id="mm'+k+'" style="background:'+SHADE[k]+'"></i>').join('');
+  function board(o,a,instant){
+    if(instant)$('board').classList.add('noanim');
+    o.forEach((k,i)=>{const t=$('t'+k);t.setAttribute('style',px(fr(ARR[a][i],600,320,14,12))+';background:'+SHADE[k]);t.querySelector('.n').textContent=i+1;
+      $('mm'+k).setAttribute('style',px(fr(ARR[a][i],218,72,0,3))+';background:'+SHADE[k])});
+    ARRK.forEach(x=>$('th-'+x).classList.toggle('sel',x===a));
+    $('arrN').textContent=(ARRK.indexOf(a)+1)+' of '+ARRK.length;
+    if(instant){void $('board').offsetWidth;$('board').classList.remove('noanim')}
   }
   const on=(id,v)=>$(id).classList.toggle('on',v);
   const keys=t=>{$('keys').innerHTML=t.map(k=>'<b>'+k+'</b>').join('')};
   const cur=(x,y)=>{$('cursor').style.left=x+'px';$('cursor').style.top=y+'px'};  // tip = (x+5, y+2)
   const ring=(x,y)=>{const r=$('ring');r.style.left=x+'px';r.style.top=y+'px';r.classList.remove('go');void r.offsetWidth;r.classList.add('go')};
   const gaps=['g1','g2','g3','gl1','gl2','gl3'];
-
-  function resetHUD(o,sel){row.classList.add('noanim');setCards(o);number(o);row.querySelectorAll('.card').forEach(c=>c.classList.remove('drag','lift'));render(o,sel);void row.offsetWidth;row.classList.remove('noanim');
+  const k=()=>wrap.clientWidth/1440;
+  const box=el=>{const r=el.getBoundingClientRect(),s=stage.getBoundingClientRect();return{x:(r.left-s.left)/k(),y:(r.top-s.top)/k(),w:r.width/k(),h:r.height/k()}};
+  const mid=el=>{const b=box(el);return[b.x+b.w/2,b.y+b.h/2]};
+  const curTo=el=>{const[x,y]=mid(el);cur(x-5,y-2)};
+  const clickAt=el=>{const[x,y]=mid(el);ring(x,y)};
+  function resetHUD(o,a){board(o,a,true);ORDER0.forEach(k=>$('t'+k).classList.remove('lift','drop'));$('upd').classList.remove('press');
     ['veil','hud','keys','tag','cursor'].forEach(i=>on(i,false));gaps.forEach(i=>on(i,false));$('cursor').classList.remove('slow')}
 
-  const ORDER=['w1','w2','w3','w4'];
+  const ORDER=ORDER0;
   let T,LOOP,REST=0;
   if(CLIP===1){
     $('tagBig').innerHTML='Perfect layouts. <em>First try.</em>';$('tagSmall').textContent='Arrange with the HUD';
-    // Thumb "Master + stack" centre ≈ (576,632) in stage coords
     T=[[0,()=>{resetHUD(ORDER,'cols');messy();cur(1180,800)}],
        [700,()=>{keys(['⌥','A']);on('keys',true)}],
        [1000,()=>{on('veil',true);on('hud',true)}],
        [1300,()=>{on('keys',false);on('cursor',true)}],
-       [1350,()=>cur(571,630)],
-       [2250,()=>{ring(576,632);render(ORDER,'ms')}],
-       [2700,()=>{keys(['↵']);on('keys',true)}],
-       [3000,()=>{on('hud',false);on('veil',false);on('cursor',false)}],
-       [3100,()=>tileOrder(ORDER,true)],
-       [3500,()=>on('keys',false)],
-       [4000,()=>gaps.forEach(i=>on(i,true))],
-       [4700,()=>on('tag',true)],
-       [7800,()=>{on('tag',false);gaps.forEach(i=>on(i,false))}],
-       [8300,messy]];
-    LOOP=9400;REST=4700;
+       [1350,()=>curTo($('th-ms'))],
+       [2250,()=>{clickAt($('th-ms'));board(ORDER,'ms')}],
+       [3000,()=>{keys(['↩']);on('keys',true)}],
+       [3300,()=>{on('hud',false);on('veil',false);on('cursor',false)}],
+       [3400,()=>tileOrder(ORDER,true)],
+       [3800,()=>on('keys',false)],
+       [4300,()=>gaps.forEach(i=>on(i,true))],
+       [5000,()=>on('tag',true)],
+       [8100,()=>{on('tag',false);gaps.forEach(i=>on(i,false))}],
+       [8600,messy]];
+    LOOP=9700;REST=5000;
   }else if(CLIP===2){
     $('tagBig').innerHTML='Every window, <em>right where you want it.</em>';$('tagSmall').textContent='Reorder in the HUD';
-    const AFTER=['w2','w3','w1','w4'];
-    // Editor card handle at (446,401); target slot 3 handle at (918,401)
+    const AFTER=['w3','w2','w1','w4'];
     T=[[0,()=>{resetHUD(ORDER,'ms');tileOrder(ORDER,false);cur(900,820)}],
        [500,()=>{keys(['⌥','A']);on('keys',true)}],
        [800,()=>{on('veil',true);on('hud',true)}],
        [1100,()=>{on('keys',false);on('cursor',true)}],
-       [1150,()=>cur(441,399)],
-       [1950,()=>{$('cw1').classList.add('drag','lift');$('cursor').classList.add('slow')}],
-       [2100,()=>{cur(913,399);cardTo('w1',2)}],
-       [2350,()=>cardTo('w2',0)],
-       [2650,()=>cardTo('w3',1)],
-       [3050,()=>{$('cw1').classList.remove('lift');number(AFTER);render(AFTER,'ms')}],
-       [3400,()=>{keys(['↵']);on('keys',true)}],
-       [3700,()=>{on('hud',false);on('veil',false);on('cursor',false)}],
-       [3800,()=>tileOrder(AFTER,true)],
-       [4150,()=>on('keys',false)],
-       [4800,()=>on('tag',true)],
-       [7500,()=>on('tag',false)],
-       [7800,()=>tileOrder(ORDER,true)]];
-    LOOP=8800;REST=4800;
+       [1150,()=>curTo($('tw1'))],
+       [1950,()=>{$('tw1').classList.add('lift');$('tw3').classList.add('drop');$('cursor').classList.add('slow')}],
+       [2100,()=>{const[x,y]=mid($('tw3'));cur(x-5,y-2);const r=fr(ARR.ms[2],600,320,14,12);const t=$('tw1');t.style.left=r[0]+'px';t.style.top=r[1]+'px';t.style.width=r[2]+'px';t.style.height=r[3]+'px'}],
+       [3050,()=>{ORDER0.forEach(k=>$('t'+k).classList.remove('lift','drop'));board(AFTER,'ms')}],
+       [3600,()=>{keys(['↩']);on('keys',true)}],
+       [3900,()=>{on('hud',false);on('veil',false);on('cursor',false)}],
+       [4000,()=>tileOrder(AFTER,true)],
+       [4350,()=>on('keys',false)],
+       [5000,()=>on('tag',true)],
+       [7700,()=>on('tag',false)],
+       [8000,()=>tileOrder(ORDER,true)]];
+    LOOP=9000;REST=5000;
   }else{
     const base=()=>{['veil','hud','keys','tag','cursor','rcur','menu','toast','dock'].forEach(i=>on(i,false));gaps.forEach(i=>on(i,false));$('cursor').classList.remove('slow');$('rcur').classList.remove('slow')};
-    const k=()=>wrap.clientWidth/1440;
-    const box=el=>{const r=el.getBoundingClientRect(),s=stage.getBoundingClientRect();return{x:(r.left-s.left)/k(),y:(r.top-s.top)/k(),w:r.width/k(),h:r.height/k()}};
-    const mid=el=>{const b=box(el);return[b.x+b.w/2,b.y+b.h/2]};
-    const curTo=el=>{const[x,y]=mid(el);cur(x-5,y-2)};
     const rc=(x,y)=>{$('rcur').style.left=x+'px';$('rcur').style.top=y+'px'};
     const toast=t=>{$('toast').textContent=t;on('toast',true)};
     function placeGaps(mw){const gx=12+mw;$('gl1').style.left=gx+'px';$('g1').style.left=(gx-20)+'px';
@@ -1742,7 +1701,7 @@ document.querySelectorAll('.clip').forEach(el=>mountClip(el,+el.dataset.clip));
     'prob.p1':'Terminal se ajusta a su rejilla de caracteres. Algunas apps no bajan de un tamaño mínimo. Si pides un tamaño que la app no acepta, salen gaps torcidos y bordes que se pisan.',
     'prob.p2':'Finestry mide antes cada app: su mínimo real y los pasos en que cambia de tamaño. Después planifica todo el layout con esos datos, así que el primer resultado ya es el bueno.',
     'feat.eyebrow':'Funciones','feat.title':'Cada cosa en su sitio.',
-    'f2.t':'Arrastra para reordenar','f2.p':'Abre el HUD y arrastra cualquier tarjeta, también la de la ventana master, a otra posición. Todas las ventanas pasan a su nuevo sitio de una vez.',
+    'f2.t':'Arrastra para reordenar','f2.p':'Abre el HUD y arrastra una ventana sobre otra para intercambiarlas. Pulsa Intro y todas pasan a su nuevo sitio de una vez.',
     'f3.t':'Redimensionado magnético','f3.p':'Arrastra el borde entre dos ventanas. Al soltar, las vecinas se ajustan para llenar el espacio y mantener el gap exacto, sin bajar nunca del mínimo de cada app.',
     'f4.t':'Layouts','f4.p':'Guarda lo que tienes en pantalla como un layout con nombre, como Development o Reuniones, incluidos los tamaños que ajustaste a mano. Cambia entre ellos con un atajo o con el selector de layouts.',
     'f5.t':'Todas las pantallas a la vez','f5.p':'Un layout abarca todos los monitores. Al aplicarlo, todas las pantallas se colocan a la vez, en el escritorio correcto.',
