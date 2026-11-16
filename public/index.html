@@ -102,6 +102,7 @@ section{padding-block:clamp(72px,11vw,140px)}
 .lp-plan .nm{font:600 15px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .lp-plan.pro .nm{color:var(--accent)}
 .lp-plan .pr{font:700 48px/1 var(--display);letter-spacing:-.03em;margin-top:14px;font-variant-numeric:tabular-nums}
+.lp-plan .pr s{font-size:.55em;color:var(--muted);font-weight:600;margin-right:10px;text-decoration-thickness:2px}
 .lp-plan .pr small{font:500 15px var(--text);color:var(--muted);letter-spacing:0;margin-left:6px}
 .lp-plan ul{list-style:none;padding:0;margin:24px 0 28px;display:grid;gap:11px;font-size:16px}
 .lp-plan li{display:flex;gap:10px;align-items:flex-start}
@@ -1467,7 +1468,6 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
           <div class="nm" data-i="plan.free">Free</div>
           <div class="pr">€0</div>
           <ul>
-            <li data-i="free.1">Layouts for up to 4 windows</li>
             <li data-i="free.2">HUD with drag to reorder</li>
             <li data-i="free.3">Arrange windows with ⌥A</li>
             <li data-i="free.4">Magnetic resize</li>
@@ -1477,7 +1477,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="lp-plan pro">
           <div class="nm">Pro</div>
-          <div class="pr">€3.99<small data-i="plan.once">one-time</small></div>
+          <div class="pr"><s>€4.99</s>€0<small data-i="plan.once">free for now</small></div>
           <ul>
             <li data-i="pro.1">Everything in Free</li>
             <li data-i="pro.2">Named layouts</li>
@@ -1752,8 +1752,8 @@ document.querySelectorAll('.clip').forEach(el=>mountClip(el,+el.dataset.clip));
     's2.t':'Reconciliación','s2.p':'Aritmética sobre los tamaños reales: ajustar a la rejilla de cada app, llenar la pantalla y mantener todos los gaps iguales.',
     's3.t':'Aplicación','s3.p':'Una comprobación final revisa mínimos, bordes de pantalla, solapes y gaps. Después solo se mueven las ventanas que cambian, una sola vez.',
     'price.eyebrow':'Precio','price.title':'Pagas una vez. Es tuyo.','price.beta':'Muy pronto. Durante la beta, todas las funciones estarán desbloqueadas.',
-    'plan.free':'Gratis','plan.getfree':'Próximamente','plan.once':'pago único','plan.note':'Los planes y precios pueden cambiar antes del lanzamiento.',
-    'free.1':'Layouts de hasta 4 ventanas','free.2':'HUD con arrastrar para reordenar','free.3':'Organizar ventanas con ⌥A','free.4':'Redimensionado magnético','free.5':'Una pantalla',
+    'plan.free':'Gratis','plan.getfree':'Próximamente','plan.once':'gratis por ahora','plan.note':'Los planes y precios pueden cambiar antes del lanzamiento.',
+    'free.2':'HUD con arrastrar para reordenar','free.3':'Organizar ventanas con ⌥A','free.4':'Redimensionado magnético','free.5':'Una pantalla',
     'pro.1':'Todo lo de Gratis','pro.2':'Layouts con nombre','pro.3':'Layouts en varias pantallas','pro.4':'Apartar una ventana','pro.5':'Atajos configurables','pro.6':'Guardado automático de layouts',
     'faq.title':'Preguntas y respuestas.',
     'q1':'¿En qué Macs funciona?','a1':'En cualquier Mac con macOS 14 Sonoma o posterior.',
