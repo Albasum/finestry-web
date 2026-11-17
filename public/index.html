@@ -354,6 +354,10 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
 .clip .toast{position:absolute;left:50%;top:420px;transform:translate(-50%,6px);z-index:32;opacity:0;transition:opacity .25s,transform .25s;
   padding:14px 26px;border-radius:14px;background:rgba(20,26,25,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:#fff;font-size:17px;font-weight:500;white-space:nowrap;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.2)}
 .clip .toast.on{opacity:1;transform:translate(-50%,0)}
+.clip .editor.light{background:#fbfbfa;color:#2b3236}
+.clip .editor.light .bar{background:#eeeeec;color:#2b3236}
+.clip .editor.light .ed .ln{color:#a7adb1}
+.clip .editor.light .k{color:#b5572a}.clip .editor.light .s{color:#3f8a2e}.clip .editor.light .f{color:#2f6db5}.clip .editor.light .c{color:#8c969b}
 .clip .kv-dim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:12;opacity:0;transition:opacity .12s ease}
 .clip .kv-dim.on{opacity:1}
 .clip .kv-dest{position:absolute;z-index:13;border-radius:10px;background:rgba(240,138,36,.28);box-shadow:inset 0 0 0 3px #f08a24;opacity:0;
@@ -1648,17 +1652,18 @@ function mountClip(root,CLIP){
       LOOP=7600;REST=2700;
     }else if(CLIP===8){
       $('tagBig').innerHTML='Move it <em>without the mouse.</em>';$('tagSmall').textContent='Move with the keyboard';
-      stage.insertAdjacentHTML('beforeend','<div class="kv-dim" data-id="kvDim"></div><div class="kv-dest" data-id="kvDest"><div class="lbl">Moving Terminal here</div></div>');
+      $('w1').classList.add('light');
+      stage.insertAdjacentHTML('beforeend','<div class="kv-dim" data-id="kvDim"></div><div class="kv-dest" data-id="kvDest"><div class="lbl">Moving Notes here</div></div>');
       const put=r=>{const e=$('kvDest');e.style.left=r[0]+'px';e.style.top=r[1]+'px';e.style.width=r[2]+'px';e.style.height=r[3]+'px'};
       const lab=v=>$('kvDest').classList.toggle('lb',v);
-      // Terminal (focus) moves down twice: swap S1↔S2, then S2↔S3
-      const AFTER=['w1','w3','w4','w2'];
-      T=[[0,()=>{base();zClear();on('kvDim',false);on('kvDest',false);lab(false);tileOrder(ORDER,false);put(SLOT.S1)}],
+      // Notes (focus, bottom of stack) goes up, then left into the master: swap S3↔S2, then S2↔M
+      const AFTER=['w4','w2','w1','w3'];
+      T=[[0,()=>{base();zClear();on('kvDim',false);on('kvDest',false);lab(false);tileOrder(ORDER,false);put(SLOT.S3)}],
          [800,()=>{keys(['⌃','⌥']);on('keys',true)}],
          [950,()=>{on('kvDim',true);on('kvDest',true)}],
-         [2100,()=>{keys(['⌃','⌥','↓']);put(SLOT.S2);lab(true)}],
+         [2100,()=>{keys(['⌃','⌥','↑']);put(SLOT.S2);lab(true)}],
          [2600,()=>keys(['⌃','⌥'])],
-         [3300,()=>{keys(['⌃','⌥','↓']);put(SLOT.S3)}],
+         [3300,()=>{keys(['⌃','⌥','←']);put(SLOT.M)}],
          [3800,()=>keys(['⌃','⌥'])],
          [4700,()=>{on('keys',false);on('kvDim',false);on('kvDest',false);tileOrder(AFTER,false)}],
          [5600,()=>on('tag',true)],
