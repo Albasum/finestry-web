@@ -354,6 +354,16 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
 .clip .toast{position:absolute;left:50%;top:420px;transform:translate(-50%,6px);z-index:32;opacity:0;transition:opacity .25s,transform .25s;
   padding:14px 26px;border-radius:14px;background:rgba(20,26,25,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:#fff;font-size:17px;font-weight:500;white-space:nowrap;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.2)}
 .clip .toast.on{opacity:1;transform:translate(-50%,0)}
+.clip .kv-dim{position:absolute;inset:0;background:rgba(6,10,10,.5);z-index:12;opacity:0;transition:opacity .2s}
+.clip .kv-dim.on{opacity:1}
+.clip .kv-mark{position:absolute;z-index:13;border-radius:10px;background:rgba(240,138,36,.42);box-shadow:inset 0 0 0 3px #f08a24;opacity:0;transition:opacity .18s}
+.clip .kv-mark.on{opacity:1}
+.clip .kv-dest{position:absolute;z-index:13;border-radius:10px;overflow:hidden;opacity:0;box-shadow:0 0 0 3px #f08a24,0 24px 50px -14px rgba(0,0,0,.6);
+  transition:left .28s cubic-bezier(.3,.8,.3,1),top .28s cubic-bezier(.3,.8,.3,1),width .28s cubic-bezier(.3,.8,.3,1),height .28s cubic-bezier(.3,.8,.3,1),opacity .18s}
+.clip .kv-dest.on{opacity:1}
+.clip .kv-dest .pv{position:absolute;inset:0;display:flex;flex-direction:column;background:#fafaf8}
+.clip .kv-dest .pv .bar{background:#ecebe7}
+.clip .kv-dest .lbl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:12px 22px;border-radius:12px;background:rgba(20,26,25,.78);color:#fff;font:600 18px var(--sys);white-space:nowrap;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.2)}
 .clip .win.float{box-shadow:0 40px 80px -20px rgba(0,0,0,.65),0 0 0 2px var(--w3)}
 .clip .duo{position:absolute;inset:0;z-index:2}
 .clip .mon2{position:absolute}
@@ -1000,7 +1010,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
     </div>
   </div>
 </div></div>
-          <div class="lp-ftext lp-rv"><h3 class="lp-h3" data-i="f8.t">Move it with the keyboard</h3><p class="lp-p" data-i="f8.p">Hold a shortcut and press an arrow to swap a window with its neighbour, or to jump the focus to the next one. Sizes stay exactly as they were.</p></div></div>
+          <div class="lp-ftext lp-rv"><h3 class="lp-h3" data-i="f8.t">Move it with the keyboard</h3><p class="lp-p" data-i="f8.p">Hold ⌃⌥ and the window in focus lights up. Use the arrows to jump through every position in the layout, then let go and it swaps places with the window there. Sizes stay exactly as they were.</p><kbd class="lp-k">⌃⌥ + ← ↑ ↓ →</kbd></div></div>
         <div class="lp-feat"><div class="lp-clipbox"><div class="clip" data-clip="4">
   <div class="clipwrap" data-id="wrap">
     <div class="stage" data-id="stage">
@@ -1640,23 +1650,27 @@ function mountClip(root,CLIP){
          [6550,()=>setRect('w1',FULL)]];
       LOOP=7600;REST=2700;
     }else if(CLIP===8){
-      $('tagBig').innerHTML='It remembers <em>where everything goes.</em>';$('tagSmall').textContent='Position memory';
-      T=[[0,()=>{base();zClear();on('dock',false);$('w2').classList.remove('gone');tileOrder(ORDER,false);cur(1100,640)}],
-         [500,()=>on('dock',true)],
-         [1100,()=>{const b=box($('dk2'));$('w2').style.zIndex=6;setRect('w2',[b.x,b.y,b.w,b.h]);$('w2').classList.add('gone')}],
-         [1450,()=>{setRect('w3',[784,40,644,418]);setTimeout(()=>setRect('w4',[784,470,644,418]),60)}],
-         [1700,()=>toast('Terminal — minimized')],
-         [2700,()=>on('toast',false)],
-         [2800,()=>on('cursor',true)],
-         [2850,()=>curTo($('dk2'))],
-         [3650,()=>{const[x,y]=mid($('dk2'));ring(x,y)}],
-         [3800,()=>{$('w2').classList.remove('gone');tileOrder(ORDER,true);on('cursor',false)}],
-         [4100,()=>toast('Terminal — back in its place')],
-         [4700,()=>on('dock',false)],
-         [5100,()=>on('toast',false)],
-         [5400,()=>on('tag',true)],
-         [8300,()=>on('tag',false)]];
-      LOOP=9100;REST=5400;
+      $('tagBig').innerHTML='Move it <em>without the mouse.</em>';$('tagSmall').textContent='Move with the keyboard';
+      stage.insertAdjacentHTML('beforeend','<div class="kv-dim" data-id="kvDim"></div><div class="kv-mark" data-id="kvMark"></div>'+
+        '<div class="kv-dest" data-id="kvDest"><div class="pv"><div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Browser</span></div><div class="url">finestry.app</div></div><div class="lbl">Moving Browser here</div></div>');
+      const put=(id,r)=>{const e=$(id);e.style.left=r[0]+'px';e.style.top=r[1]+'px';e.style.width=r[2]+'px';e.style.height=r[3]+'px'};
+      const AFTER=['w3','w2','w1','w4'];
+      const off=()=>['kvDim','kvMark','kvDest'].forEach(i=>on(i,false));
+      T=[[0,()=>{base();zClear();off();tileOrder(ORDER,false);put('kvMark',SLOT.S2);put('kvDest',SLOT.S2)}],
+         [700,()=>{keys(['⌃','⌥']);on('keys',true);on('kvDim',true);on('kvMark',true)}],
+         [1700,()=>{keys(['⌃','⌥','↑']);on('kvMark',false);put('kvDest',SLOT.S1);on('kvDest',true)}],
+         [2500,()=>keys(['⌃','⌥'])],
+         [2800,()=>{keys(['⌃','⌥','←']);put('kvDest',SLOT.M)}],
+         [3600,()=>keys(['⌃','⌥'])],
+         [3900,()=>{keys(['⌃','⌥','↓']);put('kvDest',SLOT.S2);on('kvDest',false);on('kvMark',true)}],
+         [4600,()=>keys(['⌃','⌥'])],
+         [4900,()=>{keys(['⌃','⌥','←']);on('kvMark',false);put('kvDest',SLOT.M);on('kvDest',true)}],
+         [5700,()=>keys(['⌃','⌥'])],
+         [6200,()=>{on('keys',false);off();tileOrder(AFTER,true)}],
+         [7000,()=>on('tag',true)],
+         [9800,()=>on('tag',false)],
+         [10200,()=>tileOrder(ORDER,true)]];
+      LOOP=11000;REST=7000;
     }else{
       $('tagBig').innerHTML='Step out. <em>Step back in.</em>';$('tagSmall').textContent='Set a window aside';
       T=[[0,()=>{base();zClear();$('w3').classList.remove('float');tileOrder(ORDER,false)}],
@@ -1723,7 +1737,7 @@ document.querySelectorAll('.clip').forEach(el=>mountClip(el,+el.dataset.clip));
     'foot':'Hecho por Vicent, desarrollador independiente',
     'motto':'Cada píxel aprovechado. Tus ventanas se mueven como piezas en un <em>tablero magnético</em>.',
     'f7.t':'Mosaico automático','f7.p':'Abre una ventana nueva y se coloca sola, cogiendo espacio de la ventana en la que estás trabajando. Sin atajos ni menús. Cierra una y el resto ocupa el hueco.',
-    'f8.t':'Muévela con el teclado','f8.p':'Mantén un atajo y pulsa una flecha para intercambiar una ventana con su vecina, o para pasar el foco a la siguiente. Los tamaños se quedan exactamente como estaban.',
+    'f8.t':'Muévela con el teclado','f8.p':'Mantén ⌃⌥ y la ventana con el foco se marca. Con las flechas recorres todas las posiciones del layout y, al soltar, se intercambia con la ventana que está ahí. Los tamaños se quedan exactamente como estaban.',
     'ex.eyebrow':'Y además',
     'ex1.t':'Atajos a tu medida','ex1.p':'Configura tus propios atajos, tanto para acciones como para ir directo a un layout guardado.',
     'ex2.t':'Escritorios y monitores','ex2.p':'Funciona con distintos escritorios de macOS y con distintos monitores.',
