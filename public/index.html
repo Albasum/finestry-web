@@ -350,6 +350,12 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
 .clip .mdot{width:7px;height:7px;border-radius:50%;background:var(--w2)}
 .clip .mi.hl{background:var(--sel-blue);color:#fff}
 .clip .mi.hl .sc{color:rgba(255,255,255,.8)}
+.clip .menu{width:300px}
+.clip .mi.lay{height:auto;padding:4px 10px;align-items:flex-start}
+.clip .mi.lay .sc{margin-top:2px}
+.clip .mi .ms{font-size:11.5px;color:#7a7f84;display:flex;align-items:center;gap:5px;margin-top:1px}
+.clip .mi.hl .ms{color:rgba(255,255,255,.85)}
+.clip .mon-i{width:11px;height:8px;border-radius:1.5px;border:1.3px solid currentColor;box-sizing:border-box;display:inline-block}
 .clip .msep{height:1px;margin:5px 10px;background:rgba(0,0,0,.1)}
 .clip .toast{position:absolute;left:50%;top:420px;transform:translate(-50%,6px);z-index:32;opacity:0;transition:opacity .25s,transform .25s;
   padding:14px 26px;border-radius:14px;background:rgba(20,26,25,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:#fff;font-size:17px;font-weight:500;white-space:nowrap;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.2)}
@@ -500,25 +506,22 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <svg class="cursor" data-id="cursor" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 2 L5 21 L10 16.5 L13.5 24 L16.5 22.7 L13 15.3 L19.5 15.3 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <div class="rcur" data-id="rcur"><svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><path d="M1 10 L8 3 L8 7 L24 7 L24 3 L31 10 L24 17 L24 13 L8 13 L8 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
       <div class="menu" data-id="menu">
-        <div class="mh">ACTIVE SCENE</div>
-        <div class="mi act"><span class="mdot"></span>Development <span class="un">(unsaved)</span></div>
-        <div class="mi sub" data-id="mRestore">Restore<span class="sc">⌥S</span></div>
-        <div class="mi sub">Save</div>
-        <div class="mh">OTHER SCENES</div>
-        <div class="mi">Meetings</div><div class="mi">Writing</div>
+        <div class="mh">LAYOUTS</div>
+        <div class="mi lay" data-id="mDev"><div><div>Development</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Master + stack</div></div><span class="sc">⌘1</span></div>
+        <div class="mi lay" data-id="mMeet"><div><div>Meetings</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Grid</div></div><span class="sc">⌘2</span></div>
         <div class="msep"></div>
-        <div class="mi">Arrange windows<span class="sc">⌥A</span></div>
+        <div class="mi">New Layout…</div><div class="mi">Manage Layouts…</div>
         <div class="msep"></div>
-        <div class="mi">New scene…</div><div class="mi">Manage scenes…</div>
+        <div class="mi">Organize Windows…<span class="sc">⌥A</span></div>
         <div class="msep"></div>
-        <div class="mi">Settings…</div><div class="mi">Quit Finestry</div>
+        <div class="mi">Preferences…</div><div class="mi">Configure Shortcuts…</div><div class="mi">Help<span class="sc">›</span></div><div class="mi">Quit Finestry</div>
       </div>
       <div class="dock" data-id="dock"><span class="ico i1" data-id="dk1">&lt;/&gt;</span><span class="ico i2" data-id="dk2">&gt;_</span><span class="ico i3" data-id="dk3">◎</span><span class="ico i4" data-id="dk4">≡</span></div>
       <div class="toast" data-id="toast"></div>
       <div class="duo" data-id="duo" hidden>
         <div class="mon2" style="left:70px;top:110px;width:800px;height:620px">
           <div class="bez" style="height:520px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="m1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w1) 30%, white)"><span class="ico i1">&lt;/&gt;</span></div></div><div class="mw" data-id="m2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w2) 30%, white)"><span class="ico i2">&gt;_</span></div></div><div class="mw" data-id="m3"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w3) 30%, white)"><span class="ico i3">◎</span></div></div><div class="mw" data-id="m4"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w4) 30%, white)"><span class="ico i4">≡</span></div></div>
           </div></div>
           <div class="neck" style="top:520px;width:90px;height:56px"></div><div class="foot" style="top:574px;width:220px"></div>
@@ -526,7 +529,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="mon2" style="left:930px;top:220px;width:460px;height:510px">
           <div class="bez" style="height:300px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="t1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.72 0.12 160) 30%, white)"><span class="ico i5">···</span></div></div><div class="mw" data-id="t2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.70 0.14 25) 30%, white)"><span class="ico i6">@</span></div></div>
           </div></div>
           <div class="neck" style="top:300px;width:70px;height:166px"></div><div class="foot" style="top:464px;width:170px"></div>
@@ -629,25 +632,22 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <svg class="cursor" data-id="cursor" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 2 L5 21 L10 16.5 L13.5 24 L16.5 22.7 L13 15.3 L19.5 15.3 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <div class="rcur" data-id="rcur"><svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><path d="M1 10 L8 3 L8 7 L24 7 L24 3 L31 10 L24 17 L24 13 L8 13 L8 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
       <div class="menu" data-id="menu">
-        <div class="mh">ACTIVE SCENE</div>
-        <div class="mi act"><span class="mdot"></span>Development <span class="un">(unsaved)</span></div>
-        <div class="mi sub" data-id="mRestore">Restore<span class="sc">⌥S</span></div>
-        <div class="mi sub">Save</div>
-        <div class="mh">OTHER SCENES</div>
-        <div class="mi">Meetings</div><div class="mi">Writing</div>
+        <div class="mh">LAYOUTS</div>
+        <div class="mi lay" data-id="mDev"><div><div>Development</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Master + stack</div></div><span class="sc">⌘1</span></div>
+        <div class="mi lay" data-id="mMeet"><div><div>Meetings</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Grid</div></div><span class="sc">⌘2</span></div>
         <div class="msep"></div>
-        <div class="mi">Arrange windows<span class="sc">⌥A</span></div>
+        <div class="mi">New Layout…</div><div class="mi">Manage Layouts…</div>
         <div class="msep"></div>
-        <div class="mi">New scene…</div><div class="mi">Manage scenes…</div>
+        <div class="mi">Organize Windows…<span class="sc">⌥A</span></div>
         <div class="msep"></div>
-        <div class="mi">Settings…</div><div class="mi">Quit Finestry</div>
+        <div class="mi">Preferences…</div><div class="mi">Configure Shortcuts…</div><div class="mi">Help<span class="sc">›</span></div><div class="mi">Quit Finestry</div>
       </div>
       <div class="dock" data-id="dock"><span class="ico i1" data-id="dk1">&lt;/&gt;</span><span class="ico i2" data-id="dk2">&gt;_</span><span class="ico i3" data-id="dk3">◎</span><span class="ico i4" data-id="dk4">≡</span></div>
       <div class="toast" data-id="toast"></div>
       <div class="duo" data-id="duo" hidden>
         <div class="mon2" style="left:70px;top:110px;width:800px;height:620px">
           <div class="bez" style="height:520px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="m1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w1) 30%, white)"><span class="ico i1">&lt;/&gt;</span></div></div><div class="mw" data-id="m2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w2) 30%, white)"><span class="ico i2">&gt;_</span></div></div><div class="mw" data-id="m3"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w3) 30%, white)"><span class="ico i3">◎</span></div></div><div class="mw" data-id="m4"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w4) 30%, white)"><span class="ico i4">≡</span></div></div>
           </div></div>
           <div class="neck" style="top:520px;width:90px;height:56px"></div><div class="foot" style="top:574px;width:220px"></div>
@@ -655,7 +655,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="mon2" style="left:930px;top:220px;width:460px;height:510px">
           <div class="bez" style="height:300px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="t1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.72 0.12 160) 30%, white)"><span class="ico i5">···</span></div></div><div class="mw" data-id="t2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.70 0.14 25) 30%, white)"><span class="ico i6">@</span></div></div>
           </div></div>
           <div class="neck" style="top:300px;width:70px;height:166px"></div><div class="foot" style="top:464px;width:170px"></div>
@@ -744,25 +744,22 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <svg class="cursor" data-id="cursor" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 2 L5 21 L10 16.5 L13.5 24 L16.5 22.7 L13 15.3 L19.5 15.3 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <div class="rcur" data-id="rcur"><svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><path d="M1 10 L8 3 L8 7 L24 7 L24 3 L31 10 L24 17 L24 13 L8 13 L8 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
       <div class="menu" data-id="menu">
-        <div class="mh">ACTIVE SCENE</div>
-        <div class="mi act"><span class="mdot"></span>Development <span class="un">(unsaved)</span></div>
-        <div class="mi sub" data-id="mRestore">Restore<span class="sc">⌥S</span></div>
-        <div class="mi sub">Save</div>
-        <div class="mh">OTHER SCENES</div>
-        <div class="mi">Meetings</div><div class="mi">Writing</div>
+        <div class="mh">LAYOUTS</div>
+        <div class="mi lay" data-id="mDev"><div><div>Development</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Master + stack</div></div><span class="sc">⌘1</span></div>
+        <div class="mi lay" data-id="mMeet"><div><div>Meetings</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Grid</div></div><span class="sc">⌘2</span></div>
         <div class="msep"></div>
-        <div class="mi">Arrange windows<span class="sc">⌥A</span></div>
+        <div class="mi">New Layout…</div><div class="mi">Manage Layouts…</div>
         <div class="msep"></div>
-        <div class="mi">New scene…</div><div class="mi">Manage scenes…</div>
+        <div class="mi">Organize Windows…<span class="sc">⌥A</span></div>
         <div class="msep"></div>
-        <div class="mi">Settings…</div><div class="mi">Quit Finestry</div>
+        <div class="mi">Preferences…</div><div class="mi">Configure Shortcuts…</div><div class="mi">Help<span class="sc">›</span></div><div class="mi">Quit Finestry</div>
       </div>
       <div class="dock" data-id="dock"><span class="ico i1" data-id="dk1">&lt;/&gt;</span><span class="ico i2" data-id="dk2">&gt;_</span><span class="ico i3" data-id="dk3">◎</span><span class="ico i4" data-id="dk4">≡</span></div>
       <div class="toast" data-id="toast"></div>
       <div class="duo" data-id="duo" hidden>
         <div class="mon2" style="left:70px;top:110px;width:800px;height:620px">
           <div class="bez" style="height:520px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="m1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w1) 30%, white)"><span class="ico i1">&lt;/&gt;</span></div></div><div class="mw" data-id="m2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w2) 30%, white)"><span class="ico i2">&gt;_</span></div></div><div class="mw" data-id="m3"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w3) 30%, white)"><span class="ico i3">◎</span></div></div><div class="mw" data-id="m4"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w4) 30%, white)"><span class="ico i4">≡</span></div></div>
           </div></div>
           <div class="neck" style="top:520px;width:90px;height:56px"></div><div class="foot" style="top:574px;width:220px"></div>
@@ -770,7 +767,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="mon2" style="left:930px;top:220px;width:460px;height:510px">
           <div class="bez" style="height:300px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="t1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.72 0.12 160) 30%, white)"><span class="ico i5">···</span></div></div><div class="mw" data-id="t2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.70 0.14 25) 30%, white)"><span class="ico i6">@</span></div></div>
           </div></div>
           <div class="neck" style="top:300px;width:70px;height:166px"></div><div class="foot" style="top:464px;width:170px"></div>
@@ -859,25 +856,22 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <svg class="cursor" data-id="cursor" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 2 L5 21 L10 16.5 L13.5 24 L16.5 22.7 L13 15.3 L19.5 15.3 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <div class="rcur" data-id="rcur"><svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><path d="M1 10 L8 3 L8 7 L24 7 L24 3 L31 10 L24 17 L24 13 L8 13 L8 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
       <div class="menu" data-id="menu">
-        <div class="mh">ACTIVE SCENE</div>
-        <div class="mi act"><span class="mdot"></span>Development <span class="un">(unsaved)</span></div>
-        <div class="mi sub" data-id="mRestore">Restore<span class="sc">⌥S</span></div>
-        <div class="mi sub">Save</div>
-        <div class="mh">OTHER SCENES</div>
-        <div class="mi">Meetings</div><div class="mi">Writing</div>
+        <div class="mh">LAYOUTS</div>
+        <div class="mi lay" data-id="mDev"><div><div>Development</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Master + stack</div></div><span class="sc">⌘1</span></div>
+        <div class="mi lay" data-id="mMeet"><div><div>Meetings</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Grid</div></div><span class="sc">⌘2</span></div>
         <div class="msep"></div>
-        <div class="mi">Arrange windows<span class="sc">⌥A</span></div>
+        <div class="mi">New Layout…</div><div class="mi">Manage Layouts…</div>
         <div class="msep"></div>
-        <div class="mi">New scene…</div><div class="mi">Manage scenes…</div>
+        <div class="mi">Organize Windows…<span class="sc">⌥A</span></div>
         <div class="msep"></div>
-        <div class="mi">Settings…</div><div class="mi">Quit Finestry</div>
+        <div class="mi">Preferences…</div><div class="mi">Configure Shortcuts…</div><div class="mi">Help<span class="sc">›</span></div><div class="mi">Quit Finestry</div>
       </div>
       <div class="dock" data-id="dock"><span class="ico i1" data-id="dk1">&lt;/&gt;</span><span class="ico i2" data-id="dk2">&gt;_</span><span class="ico i3" data-id="dk3">◎</span><span class="ico i4" data-id="dk4">≡</span></div>
       <div class="toast" data-id="toast"></div>
       <div class="duo" data-id="duo" hidden>
         <div class="mon2" style="left:70px;top:110px;width:800px;height:620px">
           <div class="bez" style="height:520px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="m1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w1) 30%, white)"><span class="ico i1">&lt;/&gt;</span></div></div><div class="mw" data-id="m2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w2) 30%, white)"><span class="ico i2">&gt;_</span></div></div><div class="mw" data-id="m3"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w3) 30%, white)"><span class="ico i3">◎</span></div></div><div class="mw" data-id="m4"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w4) 30%, white)"><span class="ico i4">≡</span></div></div>
           </div></div>
           <div class="neck" style="top:520px;width:90px;height:56px"></div><div class="foot" style="top:574px;width:220px"></div>
@@ -885,7 +879,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="mon2" style="left:930px;top:220px;width:460px;height:510px">
           <div class="bez" style="height:300px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="t1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.72 0.12 160) 30%, white)"><span class="ico i5">···</span></div></div><div class="mw" data-id="t2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.70 0.14 25) 30%, white)"><span class="ico i6">@</span></div></div>
           </div></div>
           <div class="neck" style="top:300px;width:70px;height:166px"></div><div class="foot" style="top:464px;width:170px"></div>
@@ -974,25 +968,22 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <svg class="cursor" data-id="cursor" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 2 L5 21 L10 16.5 L13.5 24 L16.5 22.7 L13 15.3 L19.5 15.3 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <div class="rcur" data-id="rcur"><svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><path d="M1 10 L8 3 L8 7 L24 7 L24 3 L31 10 L24 17 L24 13 L8 13 L8 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
       <div class="menu" data-id="menu">
-        <div class="mh">ACTIVE SCENE</div>
-        <div class="mi act"><span class="mdot"></span>Development <span class="un">(unsaved)</span></div>
-        <div class="mi sub" data-id="mRestore">Restore<span class="sc">⌥S</span></div>
-        <div class="mi sub">Save</div>
-        <div class="mh">OTHER SCENES</div>
-        <div class="mi">Meetings</div><div class="mi">Writing</div>
+        <div class="mh">LAYOUTS</div>
+        <div class="mi lay" data-id="mDev"><div><div>Development</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Master + stack</div></div><span class="sc">⌘1</span></div>
+        <div class="mi lay" data-id="mMeet"><div><div>Meetings</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Grid</div></div><span class="sc">⌘2</span></div>
         <div class="msep"></div>
-        <div class="mi">Arrange windows<span class="sc">⌥A</span></div>
+        <div class="mi">New Layout…</div><div class="mi">Manage Layouts…</div>
         <div class="msep"></div>
-        <div class="mi">New scene…</div><div class="mi">Manage scenes…</div>
+        <div class="mi">Organize Windows…<span class="sc">⌥A</span></div>
         <div class="msep"></div>
-        <div class="mi">Settings…</div><div class="mi">Quit Finestry</div>
+        <div class="mi">Preferences…</div><div class="mi">Configure Shortcuts…</div><div class="mi">Help<span class="sc">›</span></div><div class="mi">Quit Finestry</div>
       </div>
       <div class="dock" data-id="dock"><span class="ico i1" data-id="dk1">&lt;/&gt;</span><span class="ico i2" data-id="dk2">&gt;_</span><span class="ico i3" data-id="dk3">◎</span><span class="ico i4" data-id="dk4">≡</span></div>
       <div class="toast" data-id="toast"></div>
       <div class="duo" data-id="duo" hidden>
         <div class="mon2" style="left:70px;top:110px;width:800px;height:620px">
           <div class="bez" style="height:520px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="m1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w1) 30%, white)"><span class="ico i1">&lt;/&gt;</span></div></div><div class="mw" data-id="m2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w2) 30%, white)"><span class="ico i2">&gt;_</span></div></div><div class="mw" data-id="m3"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w3) 30%, white)"><span class="ico i3">◎</span></div></div><div class="mw" data-id="m4"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w4) 30%, white)"><span class="ico i4">≡</span></div></div>
           </div></div>
           <div class="neck" style="top:520px;width:90px;height:56px"></div><div class="foot" style="top:574px;width:220px"></div>
@@ -1000,7 +991,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="mon2" style="left:930px;top:220px;width:460px;height:510px">
           <div class="bez" style="height:300px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="t1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.72 0.12 160) 30%, white)"><span class="ico i5">···</span></div></div><div class="mw" data-id="t2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.70 0.14 25) 30%, white)"><span class="ico i6">@</span></div></div>
           </div></div>
           <div class="neck" style="top:300px;width:70px;height:166px"></div><div class="foot" style="top:464px;width:170px"></div>
@@ -1089,25 +1080,22 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <svg class="cursor" data-id="cursor" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 2 L5 21 L10 16.5 L13.5 24 L16.5 22.7 L13 15.3 L19.5 15.3 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <div class="rcur" data-id="rcur"><svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><path d="M1 10 L8 3 L8 7 L24 7 L24 3 L31 10 L24 17 L24 13 L8 13 L8 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
       <div class="menu" data-id="menu">
-        <div class="mh">ACTIVE SCENE</div>
-        <div class="mi act"><span class="mdot"></span>Development <span class="un">(unsaved)</span></div>
-        <div class="mi sub" data-id="mRestore">Restore<span class="sc">⌥S</span></div>
-        <div class="mi sub">Save</div>
-        <div class="mh">OTHER SCENES</div>
-        <div class="mi">Meetings</div><div class="mi">Writing</div>
+        <div class="mh">LAYOUTS</div>
+        <div class="mi lay" data-id="mDev"><div><div>Development</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Master + stack</div></div><span class="sc">⌘1</span></div>
+        <div class="mi lay" data-id="mMeet"><div><div>Meetings</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Grid</div></div><span class="sc">⌘2</span></div>
         <div class="msep"></div>
-        <div class="mi">Arrange windows<span class="sc">⌥A</span></div>
+        <div class="mi">New Layout…</div><div class="mi">Manage Layouts…</div>
         <div class="msep"></div>
-        <div class="mi">New scene…</div><div class="mi">Manage scenes…</div>
+        <div class="mi">Organize Windows…<span class="sc">⌥A</span></div>
         <div class="msep"></div>
-        <div class="mi">Settings…</div><div class="mi">Quit Finestry</div>
+        <div class="mi">Preferences…</div><div class="mi">Configure Shortcuts…</div><div class="mi">Help<span class="sc">›</span></div><div class="mi">Quit Finestry</div>
       </div>
       <div class="dock" data-id="dock"><span class="ico i1" data-id="dk1">&lt;/&gt;</span><span class="ico i2" data-id="dk2">&gt;_</span><span class="ico i3" data-id="dk3">◎</span><span class="ico i4" data-id="dk4">≡</span></div>
       <div class="toast" data-id="toast"></div>
       <div class="duo" data-id="duo" hidden>
         <div class="mon2" style="left:70px;top:110px;width:800px;height:620px">
           <div class="bez" style="height:520px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="m1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w1) 30%, white)"><span class="ico i1">&lt;/&gt;</span></div></div><div class="mw" data-id="m2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w2) 30%, white)"><span class="ico i2">&gt;_</span></div></div><div class="mw" data-id="m3"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w3) 30%, white)"><span class="ico i3">◎</span></div></div><div class="mw" data-id="m4"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w4) 30%, white)"><span class="ico i4">≡</span></div></div>
           </div></div>
           <div class="neck" style="top:520px;width:90px;height:56px"></div><div class="foot" style="top:574px;width:220px"></div>
@@ -1115,7 +1103,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="mon2" style="left:930px;top:220px;width:460px;height:510px">
           <div class="bez" style="height:300px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="t1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.72 0.12 160) 30%, white)"><span class="ico i5">···</span></div></div><div class="mw" data-id="t2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.70 0.14 25) 30%, white)"><span class="ico i6">@</span></div></div>
           </div></div>
           <div class="neck" style="top:300px;width:70px;height:166px"></div><div class="foot" style="top:464px;width:170px"></div>
@@ -1204,25 +1192,22 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <svg class="cursor" data-id="cursor" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 2 L5 21 L10 16.5 L13.5 24 L16.5 22.7 L13 15.3 L19.5 15.3 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <div class="rcur" data-id="rcur"><svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><path d="M1 10 L8 3 L8 7 L24 7 L24 3 L31 10 L24 17 L24 13 L8 13 L8 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
       <div class="menu" data-id="menu">
-        <div class="mh">ACTIVE SCENE</div>
-        <div class="mi act"><span class="mdot"></span>Development <span class="un">(unsaved)</span></div>
-        <div class="mi sub" data-id="mRestore">Restore<span class="sc">⌥S</span></div>
-        <div class="mi sub">Save</div>
-        <div class="mh">OTHER SCENES</div>
-        <div class="mi">Meetings</div><div class="mi">Writing</div>
+        <div class="mh">LAYOUTS</div>
+        <div class="mi lay" data-id="mDev"><div><div>Development</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Master + stack</div></div><span class="sc">⌘1</span></div>
+        <div class="mi lay" data-id="mMeet"><div><div>Meetings</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Grid</div></div><span class="sc">⌘2</span></div>
         <div class="msep"></div>
-        <div class="mi">Arrange windows<span class="sc">⌥A</span></div>
+        <div class="mi">New Layout…</div><div class="mi">Manage Layouts…</div>
         <div class="msep"></div>
-        <div class="mi">New scene…</div><div class="mi">Manage scenes…</div>
+        <div class="mi">Organize Windows…<span class="sc">⌥A</span></div>
         <div class="msep"></div>
-        <div class="mi">Settings…</div><div class="mi">Quit Finestry</div>
+        <div class="mi">Preferences…</div><div class="mi">Configure Shortcuts…</div><div class="mi">Help<span class="sc">›</span></div><div class="mi">Quit Finestry</div>
       </div>
       <div class="dock" data-id="dock"><span class="ico i1" data-id="dk1">&lt;/&gt;</span><span class="ico i2" data-id="dk2">&gt;_</span><span class="ico i3" data-id="dk3">◎</span><span class="ico i4" data-id="dk4">≡</span></div>
       <div class="toast" data-id="toast"></div>
       <div class="duo" data-id="duo" hidden>
         <div class="mon2" style="left:70px;top:110px;width:800px;height:620px">
           <div class="bez" style="height:520px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="m1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w1) 30%, white)"><span class="ico i1">&lt;/&gt;</span></div></div><div class="mw" data-id="m2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w2) 30%, white)"><span class="ico i2">&gt;_</span></div></div><div class="mw" data-id="m3"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w3) 30%, white)"><span class="ico i3">◎</span></div></div><div class="mw" data-id="m4"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w4) 30%, white)"><span class="ico i4">≡</span></div></div>
           </div></div>
           <div class="neck" style="top:520px;width:90px;height:56px"></div><div class="foot" style="top:574px;width:220px"></div>
@@ -1230,7 +1215,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="mon2" style="left:930px;top:220px;width:460px;height:510px">
           <div class="bez" style="height:300px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="t1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.72 0.12 160) 30%, white)"><span class="ico i5">···</span></div></div><div class="mw" data-id="t2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.70 0.14 25) 30%, white)"><span class="ico i6">@</span></div></div>
           </div></div>
           <div class="neck" style="top:300px;width:70px;height:166px"></div><div class="foot" style="top:464px;width:170px"></div>
@@ -1319,25 +1304,22 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
       <svg class="cursor" data-id="cursor" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 2 L5 21 L10 16.5 L13.5 24 L16.5 22.7 L13 15.3 L19.5 15.3 Z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
       <div class="rcur" data-id="rcur"><svg viewBox="0 0 32 20" width="32" height="20" aria-hidden="true"><path d="M1 10 L8 3 L8 7 L24 7 L24 3 L31 10 L24 17 L24 13 L8 13 L8 17 Z" fill="#111" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
       <div class="menu" data-id="menu">
-        <div class="mh">ACTIVE SCENE</div>
-        <div class="mi act"><span class="mdot"></span>Development <span class="un">(unsaved)</span></div>
-        <div class="mi sub" data-id="mRestore">Restore<span class="sc">⌥S</span></div>
-        <div class="mi sub">Save</div>
-        <div class="mh">OTHER SCENES</div>
-        <div class="mi">Meetings</div><div class="mi">Writing</div>
+        <div class="mh">LAYOUTS</div>
+        <div class="mi lay" data-id="mDev"><div><div>Development</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Master + stack</div></div><span class="sc">⌘1</span></div>
+        <div class="mi lay" data-id="mMeet"><div><div>Meetings</div><div class="ms"><span class="mon-i"></span>Desktop 1 · Grid</div></div><span class="sc">⌘2</span></div>
         <div class="msep"></div>
-        <div class="mi">Arrange windows<span class="sc">⌥A</span></div>
+        <div class="mi">New Layout…</div><div class="mi">Manage Layouts…</div>
         <div class="msep"></div>
-        <div class="mi">New scene…</div><div class="mi">Manage scenes…</div>
+        <div class="mi">Organize Windows…<span class="sc">⌥A</span></div>
         <div class="msep"></div>
-        <div class="mi">Settings…</div><div class="mi">Quit Finestry</div>
+        <div class="mi">Preferences…</div><div class="mi">Configure Shortcuts…</div><div class="mi">Help<span class="sc">›</span></div><div class="mi">Quit Finestry</div>
       </div>
       <div class="dock" data-id="dock"><span class="ico i1" data-id="dk1">&lt;/&gt;</span><span class="ico i2" data-id="dk2">&gt;_</span><span class="ico i3" data-id="dk3">◎</span><span class="ico i4" data-id="dk4">≡</span></div>
       <div class="toast" data-id="toast"></div>
       <div class="duo" data-id="duo" hidden>
         <div class="mon2" style="left:70px;top:110px;width:800px;height:620px">
           <div class="bez" style="height:520px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="m1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w1) 30%, white)"><span class="ico i1">&lt;/&gt;</span></div></div><div class="mw" data-id="m2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w2) 30%, white)"><span class="ico i2">&gt;_</span></div></div><div class="mw" data-id="m3"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w3) 30%, white)"><span class="ico i3">◎</span></div></div><div class="mw" data-id="m4"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, var(--w4) 30%, white)"><span class="ico i4">≡</span></div></div>
           </div></div>
           <div class="neck" style="top:520px;width:90px;height:56px"></div><div class="foot" style="top:574px;width:220px"></div>
@@ -1345,7 +1327,7 @@ footer .lp-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px
         </div>
         <div class="mon2" style="left:930px;top:220px;width:460px;height:510px">
           <div class="bez" style="height:300px"><div class="scr">
-            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development (unsaved)</span></div>
+            <div class="mbar2"><span class="fin-glyph"><i></i><i></i><i></i></span><span class="bt">Development</span></div>
             <div class="mw" data-id="t1"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.72 0.12 160) 30%, white)"><span class="ico i5">···</span></div></div><div class="mw" data-id="t2"><div class="mb"><i></i><i></i><i></i></div><div class="bd" style="background:color-mix(in oklch, oklch(0.70 0.14 25) 30%, white)"><span class="ico i6">@</span></div></div>
           </div></div>
           <div class="neck" style="top:300px;width:70px;height:166px"></div><div class="foot" style="top:464px;width:170px"></div>
@@ -1547,6 +1529,7 @@ function mountClip(root,CLIP){
     ['veil','hud','keys','tag','cursor'].forEach(i=>on(i,false));gaps.forEach(i=>on(i,false));$('cursor').classList.remove('slow')}
 
   const ORDER=ORDER0;
+  $('w1').classList.add('light');  // light editor so it never reads as a second terminal
   let T,LOOP,REST=0;
   if(CLIP===1){
     $('tagBig').innerHTML='Perfect layouts. <em>First try.</em>';$('tagSmall').textContent='Arrange with the HUD';
@@ -1608,30 +1591,32 @@ function mountClip(root,CLIP){
          [7600,()=>tileOrder(ORDER,true)]];
       LOOP=8600;REST=4200;
     }else if(CLIP===4){
-      $('tagBig').innerHTML='Your workspace, <em>one click away.</em>';$('tagSmall').textContent='Scenes';
-      T=[[0,()=>{base();$('mRestore').classList.remove('hl');$('menu').style.left=(box($('fin')).x-8)+'px';tileOrder(ORDER,false);$('scn').textContent='Development';cur(900,600)}],
-         [600,()=>{messy();$('scn').textContent='Development (unsaved)'}],
-         [1600,()=>on('cursor',true)],
-         [1650,()=>curTo($('fin'))],
-         [2450,()=>{const[x,y]=mid($('fin'));ring(x,y);on('menu',true)}],
-         [2700,()=>curTo($('mRestore'))],
-         [3450,()=>{const[x,y]=mid($('mRestore'));$('mRestore').classList.add('hl');ring(x,y)}],
-         [3700,()=>{on('menu',false);on('cursor',false)}],
-         [3800,()=>{zClear();tileOrder(ORDER,true);$('scn').textContent='Development'}],
-         [4800,()=>on('tag',true)],
-         [7800,()=>on('tag',false)]];
-      LOOP=8600;REST=4800;
+      $('tagBig').innerHTML='Your workspace, <em>one click away.</em>';$('tagSmall').textContent='Layouts';
+      const GRID=[[12,40,702,418],[726,40,702,418],[12,470,702,418],[726,470,702,418]];
+      const grid=()=>ORDER.forEach((w,i)=>setTimeout(()=>setRect(w,GRID[i]),i*60));
+      T=[[0,()=>{base();$('mMeet').classList.remove('hl');$('menu').style.left=(box($('fin')).x-8)+'px';tileOrder(ORDER,false);$('scn').textContent='Development';cur(900,600)}],
+         [700,()=>on('cursor',true)],
+         [750,()=>curTo($('fin'))],
+         [1550,()=>{const[x,y]=mid($('fin'));ring(x,y);on('menu',true)}],
+         [1800,()=>curTo($('mMeet'))],
+         [2550,()=>{const[x,y]=mid($('mMeet'));$('mMeet').classList.add('hl');ring(x,y)}],
+         [2800,()=>{on('menu',false);on('cursor',false)}],
+         [2900,()=>{grid();$('scn').textContent='Meetings'}],
+         [3900,()=>on('tag',true)],
+         [7000,()=>on('tag',false)],
+         [7400,()=>{tileOrder(ORDER,true);$('scn').textContent='Development'}]];
+      LOOP=8400;REST=3900;
     }else if(CLIP===5){
-      $('tagBig').innerHTML='One scene. <em>Every screen.</em>';$('tagSmall').textContent='Multi-monitor scenes';
+      $('tagBig').innerHTML='One layout. <em>Every screen.</em>';$('tagSmall').textContent='Multi-monitor layouts';
       ['w1','w2','w3','w4'].forEach(w=>$(w).hidden=true);root.querySelector('.menubar').hidden=true;$('duo').hidden=false;
       const MM={m1:[60,40,440,300],m2:[330,220,320,190],m3:[470,60,270,300],m4:[150,300,220,160],t1:[40,40,220,170],t2:[160,80,240,160]};
       const MT={m1:[8,22,420,470],m2:[436,22,336,151],m3:[436,181,336,151],m4:[436,340,336,152],t1:[8,20,208,252],t2:[224,20,208,252]};
       const bars=t=>root.querySelectorAll('.bt').forEach(e=>e.textContent=t);
-      const mess=()=>{for(const m in MM)setRect(m,MM[m]);bars('Development (unsaved)')};
+      const mess=()=>{for(const m in MM)setRect(m,MM[m]);bars('No layout')};
       T=[[0,()=>{base();mess()}],
-         [700,()=>{keys(['⌥','1']);on('keys',true)}],
-         [1000,()=>{Object.keys(MT).forEach((m,i)=>setTimeout(()=>setRect(m,MT[m]),i*60));bars('Main display: Master + stack  |  Secondary: Halves')}],
-         [1300,()=>toast('Scene “Development” restored on 2 displays')],
+         [700,()=>{keys(['⌘','1']);on('keys',true)}],
+         [1000,()=>{Object.keys(MT).forEach((m,i)=>setTimeout(()=>setRect(m,MT[m]),i*60));bars('Development')}],
+         [1300,()=>toast('Layout “Development” applied on 2 displays')],
          [1700,()=>on('keys',false)],
          [2700,()=>on('toast',false)],
          [3000,()=>on('tag',true)],
@@ -1640,19 +1625,19 @@ function mountClip(root,CLIP){
       LOOP=7800;REST=3000;
     }else if(CLIP===7){
       $('tagBig').innerHTML='Open a window. <em>It finds its place.</em>';$('tagSmall').textContent='Auto-tiling';
-      const FULL=[12,40,1416,848],L=[12,40,702,848],R=[726,40,702,848],LAUNCH=[480,190,620,430];
-      ['w3','w4'].forEach(w=>$(w).hidden=true);
-      T=[[0,()=>{base();zClear();$('w2').classList.add('gone');setRect('w2',LAUNCH);setRect('w1',FULL);$('w2').style.zIndex=5}],
-         [900,()=>$('w2').classList.remove('gone')],
-         [1600,()=>{setRect('w1',L);setRect('w2',R)}],
-         [2700,()=>on('tag',true)],
-         [5900,()=>on('tag',false)],
-         [6300,()=>$('w2').classList.add('gone')],
-         [6550,()=>setRect('w1',FULL)]];
-      LOOP=7600;REST=2700;
+      const L=[12,40,702,848],R=[726,40,702,848],RT=[726,40,702,418],RB=[726,470,702,418],LAUNCH=[560,230,600,420];
+      $('w4').hidden=true;
+      T=[[0,()=>{base();zClear();$('w2').classList.remove('float');$('w3').classList.add('gone');setRect('w3',LAUNCH);setRect('w1',L);setRect('w2',R);$('w3').style.zIndex=5}],
+         [700,()=>{$('w2').style.zIndex=4;$('w2').classList.add('float')}],
+         [1500,()=>$('w3').classList.remove('gone')],
+         [2200,()=>{$('w2').classList.remove('float');setRect('w2',RT);setRect('w3',RB)}],
+         [3300,()=>on('tag',true)],
+         [6500,()=>on('tag',false)],
+         [6900,()=>$('w3').classList.add('gone')],
+         [7150,()=>setRect('w2',R)]];
+      LOOP=8200;REST=3300;
     }else if(CLIP===8){
       $('tagBig').innerHTML='Move it <em>without the mouse.</em>';$('tagSmall').textContent='Move with the keyboard';
-      $('w1').classList.add('light');
       stage.insertAdjacentHTML('beforeend','<div class="kv-dim" data-id="kvDim"></div><div class="kv-dest" data-id="kvDest"><div class="lbl">Moving Notes here</div></div>');
       const put=r=>{const e=$('kvDest');e.style.left=r[0]+'px';e.style.top=r[1]+'px';e.style.width=r[2]+'px';e.style.height=r[3]+'px'};
       const lab=v=>$('kvDest').classList.toggle('lb',v);
@@ -1673,18 +1658,14 @@ function mountClip(root,CLIP){
     }else{
       $('tagBig').innerHTML='Step out. <em>Step back in.</em>';$('tagSmall').textContent='Set a window aside';
       T=[[0,()=>{base();zClear();$('w3').classList.remove('float');tileOrder(ORDER,false)}],
-         [600,()=>{keys(['⌥','⇧','W']);on('keys',true)}],
          [900,()=>{$('w3').style.zIndex=10;$('w3').classList.add('float');setRect('w3',[470,200,560,420]);setRect('w2',[784,40,644,418]);setTimeout(()=>setRect('w4',[784,470,644,418]),60)}],
          [1200,()=>toast('Browser — set aside')],
-         [2300,()=>on('keys',false)],
          [2700,()=>on('toast',false)],
-         [3300,()=>{keys(['⌥','⇧','W']);on('keys',true)}],
-         [3600,()=>{$('w3').classList.remove('float');tileOrder(ORDER,true)}],
-         [3900,()=>toast('Browser — back in its slot')],
-         [4800,()=>on('keys',false)],
+         [3600,()=>{$('w3').classList.remove('float');setRect('w4',[784,470,644,203]);setRect('w3',[784,685,644,203])}],
+         [3900,()=>toast('Browser — back in the layout')],
          [5100,()=>on('toast',false)],
          [5500,()=>on('tag',true)],
-         [8400,()=>on('tag',false)]];
+         [8400,()=>{on('tag',false);$('w3').style.zIndex='';tileOrder(ORDER,true)}]];
       LOOP=9200;REST=5500;
     }
   }
